@@ -272,7 +272,6 @@ export default function WallCalendar() {
   const [flipDir,  setFlipDir]    = useState<"next"|"prev">("next");
   const [tooltip,  setTooltip]    = useState<{text:string;x:number;y:number}|null>(null);
   const [hovDay,   setHovDay]     = useState<string|null>(null);
-  const [confetti, setConfetti]   = useState<{id:number;x:number;color:string;delay:number;size:number;rot:number}[]>([]);
   const calRef = useRef<HTMLDivElement>(null);
 
   const weather  = WEATHER[viewMonth];
@@ -338,17 +337,6 @@ export default function WallCalendar() {
 
   useEffect(()=>{ try{const r=localStorage.getItem(STORAGE_KEY);if(r)setNotes(JSON.parse(r));}catch{} },[]);
   useEffect(()=>{ localStorage.setItem(STORAGE_KEY,JSON.stringify(notes)); },[notes]);
-
-  useEffect(()=>{
-    const p=Array.from({length:22},(_,i)=>({
-      id:i,x:Math.random()*100,
-      color:["#ff4820","#ffd166","#06d6a0","#118ab2","#9b5de5","#ff9f1c"][Math.floor(Math.random()*6)],
-      delay:Math.random()*1.8,size:5+Math.random()*9,rot:Math.random()*360,
-    }));
-    setConfetti(p);
-    const t=setTimeout(()=>setConfetti([]),5000);
-    return ()=>clearTimeout(t);
-  },[]);
 
   function goMonth(dir:number) {
     if(flipping) return;
@@ -484,13 +472,6 @@ export default function WallCalendar() {
       } as React.CSSProperties}
       ref={calRef}
     >
-      {/* confetti */}
-      {confetti.map(c=>(
-        <div key={c.id} className="confetti-piece"
-          style={{left:`${c.x}%`,background:c.color,width:c.size,height:c.size,
-            animationDelay:`${c.delay}s`,transform:`rotate(${c.rot}deg)`}}/>
-      ))}
-
       {/* tooltip */}
       {tooltip&&(
         <div className="hol-tip" style={{left:tooltip.x,top:tooltip.y}}>{tooltip.text}</div>

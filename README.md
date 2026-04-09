@@ -19,7 +19,7 @@ A polished frontend-only calendar component inspired by a physical wall calendar
 - Extra UX touches:
   - theme switching
   - quick range presets
-  - holiday markers
+  - special day markers
   - lightweight entrance animation
 
 ## Tech stack
@@ -68,7 +68,7 @@ In your recording, show:
 
 1. Selecting a start and end date range.
 2. Quick presets (`7 Days`, `14 Days`, `30 Days`, `Today`).
-3. Adding a month note.
+3. Adding single date note can be added.
 4. Adding a range note.
 5. Range note dot markers appearing on relevant dates.
 6. Theme switching.
@@ -85,7 +85,4 @@ npm run start
 
 Then deploy the repository to Vercel for a live demo URL.
 
-## Notes
 
-- Existing `ca.html` in this repo is left untouched as a standalone prototype file.
-- This challenge implementation is the Next.js version in `app/` + `components/`.

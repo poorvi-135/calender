@@ -62,27 +62,6 @@ http://localhost:3000
 - Notes are filtered by tab and sorted by creation timestamp for predictable UI behavior.
 - The visual style uses CSS custom properties so themes can switch instantly without rerendering layout structure.
 
-## Video demo checklist
 
-In your recording, show:
-
-1. Selecting a start and end date range.
-2. Quick presets (`7 Days`, `14 Days`, `30 Days`, `Today`).
-3. Adding single date note can be added.
-4. Adding a range note.
-5. Range note dot markers appearing on relevant dates.
-6. Theme switching.
-7. Responsive behavior by resizing to mobile width.
-
-## Deployment
-
-Recommended: Vercel.
-
-```bash
-npm run build
-npm run start
-```
-
-Then deploy the repository to Vercel for a live demo URL.
 
 

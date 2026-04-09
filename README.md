@@ -9,8 +9,9 @@ A polished frontend-only calendar component inspired by a physical wall calendar
   - start day
   - end day
   - in-between days
-- Integrated notes section with two scopes:
-  - month notes (for the currently viewed month)
+  - can be single date as well
+- Integrated notes section with scopes:
+  - single date (for the currently viewed month)
   - range notes (attached to selected date ranges)
 - Persistent client-side storage via `localStorage` (no backend).
 - Fully responsive behavior:
@@ -19,7 +20,7 @@ A polished frontend-only calendar component inspired by a physical wall calendar
 - Extra UX touches:
   - theme switching
   - quick range presets
-  - special day markers
+  - special date markers
   - lightweight entrance animation
 
 ## Tech stack
@@ -61,7 +62,4 @@ http://localhost:3000
 - Range notes are expanded to per-day note markers in memory for efficient dot rendering on the calendar.
 - Notes are filtered by tab and sorted by creation timestamp for predictable UI behavior.
 - The visual style uses CSS custom properties so themes can switch instantly without rerendering layout structure.
-
-
-
 
